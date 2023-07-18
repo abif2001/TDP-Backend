@@ -5,7 +5,8 @@ let bodyParser = require("body-parser")
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({extended: true}));
 server.post("/process", function(req, res){
-    let name = req.body.namelet salary = parseInt(req.body.sal)
+    let name = req.body.name
+    let salary = parseInt(req.body.sal)
     let tax = 0
     if (salary<1000){
         tax = 0
