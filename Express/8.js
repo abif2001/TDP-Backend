@@ -4,7 +4,7 @@ let server = nbs()
 server.set("view engine", "ejs")
 
 server.get("/results/shafeeq", function(req,res){
-    res.render("results.ejs", {"sname":"Shafeeq", "phy":30, "chem":40, "bio":50})
+    res.render("results.ejs", {"sname":"Shafeeq", "phy":90, "chem":90, "bio":92})
     res.end()
 })
 

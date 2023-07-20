@@ -51,6 +51,24 @@
         <td> <%= result %> </td>
     </tr>
 
+<%
+if(per>=60){
+%>
+
+    <tr bgcolor="blue">
+        <td> Result1</td>
+        <td> <b> You have PASSED the exam</b></td>
+    </tr>
+
+<% } else{ %>
+
+    <tr bgcolor="red">
+        <td> Result2</td>
+        <td> <b> You have FAILED the exam </b></td>
+    </tr>
+
+<% } %>
+
 </table>
 
 
