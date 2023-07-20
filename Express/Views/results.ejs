@@ -4,7 +4,18 @@
     <centre> Exam results </centre>
 </h1>
 
-<table style="border:1px solid black">
+<% 
+    let total = phy+chem+bio
+    let per = total*100/450
+    let result = ""
+    if(per>=60){
+        result="You have PASSED the exam"
+    }else{
+        result="You have FAILED the exam"
+    }
+%>
+
+<table border="1">
     <tr>
         <td>Student Name </td>
         <td> <%= sname %> </td>
@@ -23,6 +34,21 @@
     <tr>
         <td>Biology </td>
         <td> <%= bio %> </td>
+    </tr>
+
+    <tr>
+        <td>Total marks </td>
+        <td> <%= phy+ chem + bio %> </td>
+    </tr>
+
+    <tr>
+        <td>Percentage </td>
+        <td> <%= (phy + chem + bio)*100/450 %> </td>
+    </tr>
+
+    <tr>
+        <td>Result </td>
+        <td> <%= result %> </td>
     </tr>
 
 </table>
