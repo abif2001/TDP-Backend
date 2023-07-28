@@ -13,7 +13,7 @@ let db=mysql.createConnection(
         host:"localhost",
         user:"root",
         password:"root",
-        database:"nbs"
+        database:"nbs1"
 });
 
 db.connect()
@@ -32,5 +32,14 @@ server.post("/saveEmployee",(req,res)=>{
     let edept = req.body.dept
     let sqlInsert=`insert into employees values(${empno},'${ename}',${esal},'${edept}')`
     //let sqlInsert=` insert into employees values(${req.body.empno},'${req.body.ename}',${req.body.salary},'${req.body.dept}')`
-   db.query(sqlInsert,fun)
-})
+   
+    db.query(sqlInsert,function(err,result){
+        if (err){
+            res.json({"result":"error"})
+        } else {
+            res.json({"result":"done"})
+        }
+    });
+});
+
+server.listen(8000)
